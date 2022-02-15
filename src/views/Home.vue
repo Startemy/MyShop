@@ -33,6 +33,7 @@
     <h2>Fetured Items</h2>
     <p>Shop for items based on what we featured in this week</p>
 
+    <!--Вывод товаров-->
     <section class='products'>
     <productCard />
     </section>
