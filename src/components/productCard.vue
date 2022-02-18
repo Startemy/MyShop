@@ -2,14 +2,14 @@
   <div>
     <div class="product-card__img">
       <!--Добавить ссылку на затемняющую картинку-->
-      <router-link to="/product">
+      <router-link :to="`${products.id}`">
         <img v-bind:src="products.picture" :alt="products.id">
       </router-link>
     <slot></slot>
     </div>
     <article>
       <!--Добавить ссылку по id-->
-      <h2><router-link to="/product">{{products.title}}</router-link></h2>
+      <h2><router-link :to="`${products.id}`">{{products.title}}</router-link></h2>
       <p>{{products.desc}}</p>
       <strong>{{products.price}}</strong>
     </article>
