@@ -32,28 +32,41 @@
   <section class="product-card container">
     <h2>Fetured Items</h2>
     <p>Shop for items based on what we featured in this week</p>
-
-    <!--Вывод товаров-->
     <section class='products'>
-    <productCard />
+    <ProductCard v-for="item of product" v-bind:key="item.id" v-bind:products="item">
+      <!-- Добавляем кнопку через slot-->
+      <button v-on:click="buy(item.id)">
+        <img src="../assets/image/head/cart_logo.svg" alt="cart_logo__btn">
+        Add to Cart
+      </button>
+    </ProductCard>
     </section>
 
     <nav class="proposal__btn-catalog">
-      <a href="#">Browse All Product</a>
+      <router-link to="/catalog">
+        Browse All Product
+      </router-link>
     </nav>
   </section>
-
 </main>
-
 </template>
 
 <script>
-import productCard from '../components/productCard.vue'
+import ProductCard from '../components/ProductCard.vue'
 
 export default {
   components: {
-    productCard
+    ProductCard,
+  },
+  name: 'home',
+  props:[
+    'product',
+    'incart'
+  ],
+    methods: {
+    buy(id) {
+      this.$emit('added', id);
+    }
   }
 }
-
 </script>

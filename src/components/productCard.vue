@@ -1,29 +1,26 @@
 <template>
   <div>
     <div class="product-card__img">
-      <a href="#">
-        <img src="../assets/image/orders/for_man/blue_jaket.png" alt="product_1">
-      </a>
-      <form action="../views/cart.html">
-        <button type="submit">
-          <img src="../assets/image/head/cart_logo.svg" alt="cart_logo__btn">
-          Add to Cart
-        </button>
-      </form>
+      <!--Добавить ссылку на затемняющую картинку-->
+      <router-link to="/product">
+        <img v-bind:src="products.picture" :alt="products.id">
+      </router-link>
+    <slot></slot>
     </div>
     <article>
-      <h2><a href="#">ELLERY X M'O CAPSULE</a></h2>
-      <p>Known for her sculptural takes on traditional
-        tailoring,
-        Australian arbiter
-        of
-        cool
-        Kym Ellery teams up with Moda Operandi.</p>
-      <strong>$10000.00</strong>
+      <!--Добавить ссылку по id-->
+      <h2><router-link to="/product">{{products.title}}</router-link></h2>
+      <p>{{products.desc}}</p>
+      <strong>{{products.price}}</strong>
     </article>
   </div>
 </template>
 
 <script>
-
+export default {
+  name:'ProductCard',
+  props:[
+    'products'
+  ],
+}
 </script>
