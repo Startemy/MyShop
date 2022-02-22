@@ -7,7 +7,6 @@
           <router-link to="/">HOME / </router-link>
           <router-link to="/catalog">CATALOG</router-link>
         </div>
-        <!--Разобрать как вывести ссылки иерархии от корня-->
       </div>
     </section>
     <section id="catalog" class="container">

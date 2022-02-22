@@ -1,10 +1,6 @@
 <template>
   <section class="main__grow">
-    <section id="page-title" class="page-title">
-      <div class="page-title__heading container">
-        <p>SHOPPING CART</p>
-      </div>
-    </section>
+    <PageTitle PageTitle="CART" />
     <section class="cart container">
       <section class="cart__list">
 
@@ -45,15 +41,18 @@
 
 <script>
 import ProductInCart from '../components/ProductInCart.vue'
+import PageTitle from '../components/PageTitle.vue'
 
 export default {
   components: {
     ProductInCart,
+    PageTitle,
   },
   name: 'cart',
   props:[
     'incart',
-    'product'
+    'product',
+    'PageTitle'
   ],
   methods: {
     remove(id){
