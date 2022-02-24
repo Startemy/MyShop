@@ -86,8 +86,8 @@
 
         <section class="product-card">
           <section>
-            <ProductCard v-for="item of product" v-bind:key="item.id" v-bind:products="item">
-              <button v-on:click="buy(item.id)">
+            <ProductCard v-for="item of catalog" v-bind:key="item.id" v-bind:products="item">
+              <button v-on:click="buy(item)">
                 <img src="../assets/image/head/cart_logo.svg" alt="cart_logo__btn">
                 Add to Cart
               </button>
@@ -114,20 +114,18 @@
 import ProductCard from '../components/ProductCard.vue'
 
 export default {
-  components:{
-    ProductCard,
-  },
+  components:{ProductCard},
   name: 'catalog',
-  props:[
-  'product',
-  'incart'
-  ],
+  computed: {
+    catalog() {
+      return this.$store.getters.getCatalog
+    }
+  },
   methods: {
-    buy(id) {
-      this.$emit('added', id);
+    buy(item) {
+      this.$store.dispatch('addToCart', item)
     }
   }
-
 }
 </script>
 

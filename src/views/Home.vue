@@ -33,9 +33,9 @@
     <h2>Fetured Items</h2>
     <p>Shop for items based on what we featured in this week</p>
     <section class='products'>
-    <ProductCard v-for="item of product" v-bind:key="item.id" v-bind:products="item">
+    <ProductCard v-for="item of catalog" v-bind:key="item.id" v-bind:products="item">
       <!-- Добавляем кнопку через slot-->
-      <button v-on:click="buy(item.id)">
+      <button v-on:click="buy(item)">
         <img src="../assets/image/head/cart_logo.svg" alt="cart_logo__btn">
         Add to Cart
       </button>
@@ -55,17 +55,16 @@
 import ProductCard from '../components/ProductCard.vue'
 
 export default {
-  components: {
-    ProductCard,
-  },
+  components: {ProductCard},
   name: 'home',
-  props:[
-    'product',
-    'incart'
-  ],
-    methods: {
-    buy(id) {
-      this.$emit('added', id);
+  computed: {
+    catalog() {
+      return this.$store.getters.getCatalog
+    }
+  },
+  methods: {
+    buy(item) {
+      this.$store.dispatch('addToCart', item)
     }
   }
 }

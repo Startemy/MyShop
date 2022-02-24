@@ -4,7 +4,7 @@
     <section class="cart container">
       <section class="cart__list">
 
-        <ProductInCart v-for="item of incart" v-bind:key="item.id" v-bind:prodincart="item">
+        <ProductInCart v-for="item of cart" v-bind:key="item.id" v-bind:prodincart="item">
           <button v-on:click="remove(item.id)">
             <img src="../assets/image/icons/X.svg" alt="close">
           </button>
@@ -44,21 +44,18 @@ import ProductInCart from '../components/ProductInCart.vue'
 import PageTitle from '../components/PageTitle.vue'
 
 export default {
-  components: {
-    ProductInCart,
-    PageTitle,
-  },
+  components: {ProductInCart,PageTitle},
   name: 'cart',
-  props:[
-    'incart',
-    'product',
-    'PageTitle'
-  ],
-  methods: {
-    remove(id){
-      this.$emit('remove', id);
+  props:['PageTitle'],
+  computed: {
+    cart() {
+      return this.$store.getters.getCart
     }
-
+  },
+  methods: {
+    remove(id) {
+      this.$store.dispatch('removeFromCart', id)
+    }
   }
 }
 </script>

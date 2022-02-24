@@ -28,9 +28,9 @@
       </ul>
       <h3>NAVIGATION</h3>
       <ul>
-        <li><a href="views/catalog.html">Catalog</a></li>
-        <li><a href="views/cart.html">Cart</a></li>
-        <li><a href="views/registration.html">Registation</a></li>
+        <li><router-link to="/catalog">Catalog</router-link></li>
+        <li><router-link to="/cart">Cart</router-link></li>
+        <li><router-link to="/registration">Registation</router-link></li>
       </ul>
     </div>
   </div>

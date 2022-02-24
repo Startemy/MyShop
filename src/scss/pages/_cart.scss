@@ -9,7 +9,7 @@
             max-height: 306px;
             @include alignment(space-between,none);
             box-shadow: 17px 19px 24px rgba(0,0,0,0.2);
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             & img{
                 max-width: 262px;
             }
@@ -24,7 +24,7 @@
                     text-decoration: none;
                     font-size: 24px;
                     color: #222222;
-                    
+
                     }
                 }
                 & p{

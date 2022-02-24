@@ -11,7 +11,7 @@
       </div>
     </section>
     <section class="slide">
-      <img class="slide__img" src="../assets/image/orders/for_women/girl_on_chear.jpg" alt="girl_on_chear">
+      <img class="slide__img" src="/img/orders/for_women/girl_on_chear.jpg" alt="girl_on_chear">
       <div class="arrow">
         <div class="slide__arrow slide__arrow--left">
           <svg class="slide__arrow__style" width="13" height="23" viewBox="0 0 13 23"
@@ -81,9 +81,9 @@
     </section>
     <section class="product-card product-card--mrg container">
       <section>
-        <ProductCard v-for="item of product" v-bind:key="item.id" v-bind:products="item">
+        <ProductCard v-for="item of catalog" v-bind:key="item.id" v-bind:products="item">
           <!-- Добавляем кнопку через slot-->
-          <button v-on:click="buy(item.id)">
+          <button v-on:click="buy(item)">
             <img src="../assets/image/head/cart_logo.svg" alt="cart_logo__btn">
             Add to Cart
           </button>
@@ -97,17 +97,16 @@
 import ProductCard from '../components/ProductCard.vue'
 
 export default {
-  components: {
-    ProductCard,
-  },
+  components: {ProductCard},
   name:'product',
-  props:[
-    'product',
-    'incart'
-  ],
+  computed: {
+    catalog() {
+      return this.$store.getters.getCatalog
+    }
+  },
   methods: {
-    buy(id) {
-      this.$emit('added', id);
+    buy(item) {
+      this.$store.dispatch('addToCart', item)
     }
   }
 }
