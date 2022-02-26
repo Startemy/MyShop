@@ -33,7 +33,7 @@
     <h2>Fetured Items</h2>
     <p>Shop for items based on what we featured in this week</p>
     <section class='products'>
-    <ProductCard v-for="item of catalog" v-bind:key="item.id" v-bind:products="item">
+    <ProductCard v-for="item of catalog" :key="item.id" :products="item">
       <!-- Добавляем кнопку через slot-->
       <button v-on:click="buy(item)">
         <img src="../assets/image/head/cart_logo.svg" alt="cart_logo__btn">

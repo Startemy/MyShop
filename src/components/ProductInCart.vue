@@ -18,9 +18,7 @@
         <input type="number" v-model="quantity"  min="1">
       </p>
     </div>
-    <form action="#">
       <slot></slot>
-    </form>
   </div>
 </template>
 
@@ -34,7 +32,7 @@ export default {
         return this.prodincart.quantity
       },
       set(value) {
-        this.$store.dispatch('setQuantity', {id: this.prodincart.id, quantity: value})
+        this.$store.dispatch('setQuantity', {id: this.prodincart.id, quantity: Number(value)})
       }
     }
   },

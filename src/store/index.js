@@ -22,15 +22,15 @@ export default new Vuex.Store({
       if(existProduct) {
         existProduct.quantity++
       } else {
-        state.cart.push(Object.assign({quantity: 1}, product))
+        state.cart.push(Object.assign({quantity:1}, product))
       }
     },
     removeFromCart: (state, id) => {
-      const idx = state.cart.findIndex((item) => item.id == id)
+      const idx = state.cart.findIndex(item => item.id == id)
       state.cart.splice(idx, 1);
     },
     setQuantity: (state, {id, quantity}) => {
-      const product = state.cart.find((item) => item.id == id)
+      const product = state.cart.find(item => item.id == id)
       product.quantity = quantity
     }
   },

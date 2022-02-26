@@ -86,7 +86,7 @@
 
         <section class="product-card">
           <section>
-            <ProductCard v-for="item of catalog" v-bind:key="item.id" v-bind:products="item">
+            <ProductCard v-for="item of catalog" :key="item.id" :products="item">
               <button v-on:click="buy(item)">
                 <img src="../assets/image/head/cart_logo.svg" alt="cart_logo__btn">
                 Add to Cart
