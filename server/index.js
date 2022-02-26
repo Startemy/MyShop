@@ -80,7 +80,6 @@ fs.readFile(cart_path, 'utf-8', (err, data) => {
   if(!err) {
     let cart = JSON.parse(data);
     let index = cart.findIndex(p => p.id == req.params.id)
-
     cart.splice(index, 1);
 
     fs.writeFile(cart_path, JSON.stringify(cart), 'utf-8', (err, data) => {

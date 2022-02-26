@@ -15,10 +15,9 @@
         <span>XL</span>
       </p>
       <p>Quantity:
-        <input type="number" v-model="quantity"  min="1" value="">
+        <input type="number" v-model="quantity"  min="1">
       </p>
     </div>
-    <!--Кнопку удалить товар лучше позишном или мерджином-->
     <form action="#">
       <slot></slot>
     </form>

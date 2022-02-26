@@ -30,7 +30,7 @@ export default new Vuex.Store({
       state.cart.splice(idx, 1);
     },
     setQuantity: (state, {id, quantity}) => {
-      const product = state.cart.find(item => item.id == id)
+      const product = state.cart.find((item) => item.id == id)
       product.quantity = quantity
     }
   },

@@ -4,9 +4,9 @@
     <section class="cart container">
       <section class="cart__list">
 
-        <ProductInCart v-for="item of cart" v-bind:key="item.id" v-bind:prodincart="item">
-          <button v-on:click="remove(item.id)">
-            <img src="../assets/image/icons/X.svg" alt="close">
+        <ProductInCart v-for="item of cart" :key="item.id" :prodincart="item">
+          <button @click="remove(item.id)">
+            <img src="../assets/image/icons/X.svg">
           </button>
         </ProductInCart>
 

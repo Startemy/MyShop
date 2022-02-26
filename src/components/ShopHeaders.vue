@@ -17,7 +17,7 @@
         <ul class="header__rightpart header__quantity-pos">
           <li>
             <input class="burger-input" id="burger" type="checkbox">
-            <label class="gamburger" for="burger" v-on:click="displayMenu()">
+            <label class="gamburger" for="burger" @click="displayMenu()">
               <span></span>
               <span></span>
               <span></span>

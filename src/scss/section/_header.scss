@@ -38,7 +38,7 @@
         .menu-shell{
             position: absolute;
             left: 170px;
-            top: 56px;
+            top: 57px;
             width: 232px;
             height:calc(100vh - 79px);
             background-color: white;
@@ -46,12 +46,20 @@
             z-index: 2;
             @media (max-width:699px),(max-height:699px){
                 left: 83px;
-                top: 52px;
+                top: 57px;
                 overflow-y: scroll;
+                scrollbar-width: none;
+                &::-webkit-scrollbar{
+                    width: 0;
+                }
             }
             @media (min-width:700px) and (max-width:1024px){
                 left: 179px;
                 overflow-y: scroll;
+                scrollbar-width: none;
+                &::-webkit-scrollbar{
+                    width: 0;
+                }
             }
             & .menu-box{
                 & h2{

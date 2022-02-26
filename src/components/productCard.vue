@@ -11,7 +11,7 @@
       <!--Добавить ссылку по id-->
       <h2><router-link :to="`${ products.id }`">{{ products.title }}</router-link></h2>
       <p>{{ products.desc }}</p>
-      <strong>{{ products.price }}</strong>
+      <strong>{{ products.price }} $</strong>
     </article>
   </div>
 </template>
