@@ -80,8 +80,6 @@ export default new Vuex.Store({
         })
     }
   },
-
   modules: {
-    //Подключение модулей - других файлов store
   }
 })

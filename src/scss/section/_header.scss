@@ -1,34 +1,33 @@
 //Голова//
-.header{
+.header {
     background-color: #222222;
     & nav{
         @include alignment(space-between, center);
         padding: 19px 10px;
     }
-    &__leftpart{
+    &__leftpart {
         @include alignment(none, center);
         & > li{
             list-style: none;
             margin-right: 41px;
         }
     }
-    &__rightpart{
+    &__rightpart {
         @include alignment(none, center);
         position: relative;
-        & > li{
+        & > li {
             list-style: none;
-            &:not(:last-child){
+            &:not(:last-child) {
             margin-right: 33px;
             }
         }
-        .gamburger{
+        .gamburger {
             display: flex;
             flex-direction: column;
             width: 32px;
             height: 23px;
             cursor: pointer;
-
-            & span{
+            & span {
                 border: 1px solid #E8E8E8;
                 background-color: #E8E8E8;
                 &:not(:last-child){
@@ -37,7 +36,7 @@
                 border-radius: 5px;
             }
         }
-        .menu-shell{
+        .menu-shell {
             position: absolute;
             left: 170px;
             top: 57px;
@@ -46,32 +45,32 @@
             background-color: white;
             box-shadow: 0px 0px 26px 3px rgba(34, 60, 80, 0.2);
             z-index: 2;
-            @media (max-width:699px),(max-height:699px){
+            @media (max-width:699px),(max-height:699px) {
                 left: 83px;
                 top: 57px;
                 overflow-y: scroll;
                 scrollbar-width: none;
-                &::-webkit-scrollbar{
+                &::-webkit-scrollbar {
                     width: 0;
                 }
             }
-            @media (min-width:700px) and (max-width:1024px){
+            @media (min-width:700px) and (max-width:1024px) {
                 left: 179px;
                 overflow-y: scroll;
                 scrollbar-width: none;
-                &::-webkit-scrollbar{
+                &::-webkit-scrollbar {
                     width: 0;
                 }
             }
-            & .menu-box{
-                & h2{
+            & .menu-box {
+                & h2 {
                     font-weight: bold;
                     font-size: 14px;
                     line-height: 17px;
                     color: #000000;
                     padding: 37px 0 0 34px;
                 }
-                & h3{
+                & h3 {
                     font-size: 14px;
                     line-height: 17px;
                     color: #F16D7F;
@@ -79,18 +78,18 @@
                     margin-left: 34px;
                     margin-top: 20px;
                 }
-                & ul{
+                & ul {
                     margin-bottom: 20px;
-                    & li{
+                    & li {
                         list-style: none;
-                        & a{
+                        & a {
                             text-decoration: none;
                             font-size: 14px;
                             line-height: 17px;
                             color: #6F6E6E;
                             margin-left: 54px;
                         }
-                        &:not(:last-child){
+                        &:not(:last-child) {
                             margin-bottom: 11px;
                         }
                     }
@@ -100,7 +99,7 @@
         .hidden{
             display: none;
         }
-        .burger-input{
+        .burger-input {
             display: none;
         }
                 /////Выезд меню///////

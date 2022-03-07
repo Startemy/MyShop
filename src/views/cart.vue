@@ -26,7 +26,7 @@
           </div>
           <div>
             <div>
-              <p>SUB TOTAL<span>$900</span></p>
+              <p>SUB TOTAL<span>${{ totalPrice }}</span></p>
               <p class="grand">GRAND TOTAL <span>$900</span></p>
               <div></div>
               <button>PROCEEDTO CHECKOUT</button>
@@ -50,12 +50,12 @@ export default {
   computed: {
     cart() {
       return this.$store.getters.getCart
-    }
+    },
   },
   methods: {
     remove(id) {
       this.$store.dispatch('removeFromCart', id)
-    }
+    },
   }
 }
 </script>

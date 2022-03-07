@@ -70,24 +70,24 @@ export default {
   },
 
   methods: {
-    /**Цена ИТОГО */
-    totalPrice() {
-      setTimeout(() => {
-        let li = document.querySelectorAll('.cart_preview > ul > li')
-        li.forEach(function(totpr){
-          if(totpr.classList.contains('total_price')){
-            let total = 0;
-            let ttlPrc = document.querySelectorAll('.total_price')
-              for(let i = 0; i < ttlPrc.length; i++){
-                  total += Number(ttlPrc[i].textContent.match(/\d+/));
-              }
-            document.querySelector('.ttl_price').innerHTML = total;
-          }else if(!totpr.classList.contains('total_price')){
-            document.querySelector('.ttl_price').innerHTML = 0;
-          }
-        });
-      }, 5);
-    },
+      /**Цена ИТОГО */
+  totalPrice() {
+    setTimeout(() => {
+      let li = document.querySelectorAll('.cart_preview > ul > li')
+      li.forEach(function(totpr) {
+        if(totpr.classList.contains('total_price')) {
+          let total = 0;
+          let ttlPrc = document.querySelectorAll('.total_price')
+            for(let i = 0; i < ttlPrc.length; i++) {
+              total += Number(ttlPrc[i].textContent.match(/\d+/));
+            }
+          document.querySelector('.ttl_price').innerHTML = total;
+        }else if(!totpr.classList.contains('total_price')) {
+          document.querySelector('.ttl_price').innerHTML = 0;
+        }
+      });
+    }, 5);
+  },
     /**Появление превью корзины при  наведении */
     hidden() {
       let orderPrvw = document.querySelector('.cart_preview')

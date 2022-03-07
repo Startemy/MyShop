@@ -11,6 +11,7 @@
 <script>
 import ShopHeaders from './components/ShopHeaders.vue'
 import ShopFooter from './components/ShopFooter.vue'
+import CartPreview from './components/CartPreview.vue'
 
 export default {
   components: {
@@ -24,7 +25,6 @@ export default {
   },
 
   methods: {
-
   },
 }
 </script>
