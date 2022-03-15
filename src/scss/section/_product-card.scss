@@ -57,8 +57,8 @@
             z-index: 1;
         }
         &:hover > button{ ///появление кнопки корзина при наведении на крточку
-            animation: 2s opacity-btn;
-            animation-delay: 1s;
+            animation: 1s opacity-btn;
+            //animation-delay: 1s;
             animation-fill-mode: forwards;
         }
         &:hover::before{
@@ -70,11 +70,11 @@
             animation-fill-mode: forwards;
             z-index: 2;
             display: block;
-        } 
+        }
         &:hover{
             animation: 1s card-shadow;
             animation-fill-mode: forwards;
-        }  
+        }
     }
     &__imgstr{
         display: block;
@@ -102,7 +102,7 @@
             color:$brand-color;
         }
     }
-    
+
     //--------Кнопка Смотреть все продукты---------------//
     & nav{
         @include margtb(63,95);
